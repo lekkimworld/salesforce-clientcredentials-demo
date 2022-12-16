@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>dummy@example.com</contactEmail>
+    <label>Demo</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:8080</callbackUrl>
+        <consumerKey>REPLACE_CLIENT_ID</consumerKey>
+        <consumerSecret>REPLACE_CLIENT_SECRET</consumerSecret>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>true</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+        <scopes>Api</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>API Only</permissionSetName>
+</ConnectedApp>

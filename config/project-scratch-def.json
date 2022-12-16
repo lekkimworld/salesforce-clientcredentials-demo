@@ -1,0 +1,17 @@
+{
+  "orgName": "salesforce-clientcredentials-demo",
+  "edition": "Enterprise",
+  "features": ["PersonAccounts", "Communities", "EnableSetPasswordInApi", "SalesforceIdentityForCommunities", "Sites", "ExternalIdentityLogin"],
+  "language": "en_US",
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
+    }
+  }
+}
