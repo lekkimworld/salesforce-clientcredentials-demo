@@ -1,5 +1,5 @@
 # salesforce-clientcredentials-demo
-
+Example of using the, with Winter 23, new `client_credentials` OAuth flow. The org created and credentials created can then be used with the new GraphQL API.
 
 ## Configure Initial Org ##
 ```
@@ -20,6 +20,7 @@ cat ./metadataTemplates/connectedApps/Demo.connectedApp-meta.xml \
 sfdx force:source:deploy -m ConnectedApp,PermissionSet,CustomObject
 sfdx force:apex:execute -f apex/create_api_only_user.apex
 sfdx force:data:tree:import -p data/Account-Contact-plan.json
+sfdx force:apex:execute -f apex/create_my_custom_objects.apex
 
 rm ./.env
 echo "SALESFORCE_CLIENT_ID=$CLIENT_ID" > ./.env

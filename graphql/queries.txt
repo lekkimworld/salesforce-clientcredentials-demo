@@ -1,0 +1,142 @@
+query {
+  rateLimit {
+    resetAt
+    remaining
+  }
+}
+
+query {
+  uiapi {
+    objectInfos (apiNames: ["Account","Contact"]) {
+      ApiName
+      createable
+    }
+  }
+}
+
+query {
+  uiapi {
+    query {
+      Account {
+        edges {
+          node {
+            Id,
+            Name {value}
+          }
+        }
+      }
+    }
+  }
+}
+
+query {
+  uiapi {
+    query {
+      Account(orderBy: {Name: {order: DESC}}) {
+        edges {
+          node {
+            Id,
+            Name {value}
+          }
+        }
+      }
+    }
+  }
+}
+
+query ($account_where: Account_Filter = {Name: {like: "A%"}}) {
+  uiapi {
+    query {
+      Account(where: $account_where) {
+        edges {
+          
+          node {
+            Id,
+            Name {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query ($account_where: Account_Filter = {Name: {like: "A%"}}) {
+  uiapi {
+    query {
+      Account(where: $account_where) {
+        edges {
+          
+          node {
+            Id,
+            Name {
+              value
+            }
+          }
+        }
+      }
+      Contact (orderBy: {Name: {order: ASC}}) {
+      	edges {
+          node {
+            Id,
+            Name {value},
+            AccountId {value}
+          }
+        }
+      }
+    }
+  }
+}
+
+query ($account_where: Account_Filter = {Name: {like: "A%"}}) {
+  uiapi {
+    query {
+      Account(where: $account_where) {
+        edges {
+          
+          node {
+            Id,
+            Name {
+              value
+            }
+            Contacts (orderBy: {Name: {order: ASC}}) {
+              edges {
+                node {
+                  Id,
+                  Name {value}
+                }
+              }
+            }
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+
+query {
+  uiapi {
+    query {
+      Account(orderBy: {Name: {order: DESC}}) {
+        edges {
+          node {
+            Id,
+            Name {value},
+            My_Custom_Objects__r {
+              edges {
+                node {
+                  Id,
+                  RandomValue__c {value}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
