@@ -30,4 +30,9 @@
         <object>My_Custom_Object__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <fieldPermissions>
+        <field>My_Custom_Object__c.RandomValue__c</field>
+        <editable>true</editable>
+        <readable>true</readable>
+    </fieldPermissions>
 </PermissionSet>
